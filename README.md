@@ -1,5 +1,5 @@
 # Sudoku_Solver
-PHY 504 Final Project a code that solves Sudoku puzzles
+## PHY 504 Final Project: A code that solves Sudoku puzzles
 
 A sudoku board is composed of a 9 by 9 grid of cells that can take values
 from 1 to 9. The board is subdivided into 9 3x3 boxes. The rules of the 
@@ -12,7 +12,7 @@ then that value must go in that cell.
 
 
 ## Building
-make
+If your pwd is Sudoku_Solver, entering 'make' in the terminal will build the solve application and a driver. The driver can be exercised by 'make testing'
 
 
 ## Using the Program
