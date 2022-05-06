@@ -16,7 +16,7 @@ If your pwd is Sudoku_Solver, entering `make` in the terminal will build the sol
 
 
 ## Using the Program
-After compiling, the program can be run by ./solve. The program can be provided 
+After compiling, the program can be run by `./solve`. The program can be provided 
 with the name of a board file on the command line. If no file is given, the user
 is prompted to give one. After this the solver will run until the board is solved 
 or it is found that the algorithm can not solve the board. 
