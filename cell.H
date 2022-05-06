@@ -8,7 +8,7 @@
 #include "board.H"
 
 class cell {
-  public:
+public:
   char val;
   
   int x,y;
@@ -63,14 +63,14 @@ class cell {
 	}
       }
       if(needc){
-		_required.push_back(num[i]);
+	_required.push_back(num[i]);
 	       
-		//		std::cout<<"a "<<num[i]<<std::endl;
+	
       }
       needc=true;
       if(needr){
-			_required.push_back(num[i]);
-			//		std::cout<<"b "<<num[i]<<std::endl;
+	_required.push_back(num[i]);
+	
       }
       needr=true;
 
@@ -90,9 +90,9 @@ class cell {
 	  }
 	}
       }
-         if(needb){
-	   //	   std::cout<<"c "<<num[i]<<std::endl;
-	   	_required.push_back(num[i]);
+      if(needb){
+	
+	_required.push_back(num[i]);
       }
 
       needb=true;
@@ -103,7 +103,7 @@ class cell {
   }
 
 
-    std::vector<char> forbid(Board b){
+  std::vector<char> forbid(Board b){
     cell _cell;
     std::vector<char> num {'1','2','3','4','5','6','7','8','9'};
     std::vector<char> _forbid;
@@ -123,40 +123,35 @@ class cell {
 	needb=false;
       }
       else{
-      for(int j=0;j<9;j++){
+	for(int j=0;j<9;j++){
 
-	if(b.nums[column+j*9]==num[i]){
-	  needc=false;
-	}
-	if(b.nums[row*9+j]==num[i]){
-	  needr=false;
-	}
-
+	  if(b.nums[column+j*9]==num[i]){
+	    needc=false;
+	  }
+	  if(b.nums[row*9+j]==num[i]){
+	    needr=false;
+	  }
 	
-      }
-
-
-
-
-          for(int k=0;k<3;k++){
-        for(int l=0;l<3;l++){
-	  if(x>=k*3 && x<=k*3+2 && y>=l*3 && y<=l*3+2){
+	}
+	for(int k=0;k<3;k++){
+	  for(int l=0;l<3;l++){
+	    if(x>=k*3 && x<=k*3+2 && y>=l*3 && y<=l*3+2){
 	 
-	    for(int m=0;m<3;m++){
-	      for(int n=0;n<3;n++){
-		if(b.nums[k*3+9*m+27*l+n]==num[i]){
-		  needb=false;
+	      for(int m=0;m<3;m++){
+		for(int n=0;n<3;n++){
+		  if(b.nums[k*3+9*m+27*l+n]==num[i]){
+		    needb=false;
 		  
-		}
+		  }
 	
+		}
 	      }
 	    }
 	  }
 	}
       }
-      }
       if(!needc){
-		_forbid.push_back(num[i]);
+	_forbid.push_back(num[i]);
       }
       needc=true;
       if(!needr){
@@ -165,8 +160,8 @@ class cell {
       needr=true;
 
   
-         if(!needb){
-	  	_forbid.push_back(num[i]);
+      if(!needb){
+	_forbid.push_back(num[i]);
       }
 	
       needb=true;
@@ -182,8 +177,8 @@ class cell {
     
     cell _cell(val,x,y,given);
     std::vector<char> num {'1','2','3','4','5','6','7','8','9'};
-      char ex;
-      bool changed=false;
+    char ex;
+    bool changed=false;
 
 
     //loop over numbers
@@ -198,28 +193,26 @@ class cell {
       std::vector<char> _required=_cell.required(b);
       for(int j=0;j<_required.size();j++){
 
-	 if(num[i]==_required[j]){
-	   inst++;	  
-	 }
+	if(num[i]==_required[j]){
+	  inst++;	  
+	}
       }
-      //    std::cout<<inst<<std::endl;
       if(inst==3){
-	//  	std::cout<<"three "<<num[i]<<std::endl;
 	three = true;
       }
     
       //drives loops over 9 cells
-     for(int j=0;j<9;j++){
- //check if octuple forbiden in collumn
+      for(int j=0;j<9;j++){
+	//check if octuple forbiden in collumn
 	if(j != row){
 	 
 	  cell r (b.nums[j*9+column],column,j);
 	  std::vector<char> list=r.forbid(b);
 	  bool repeat=false;
  	  for(int k=0;k<list.size();k++){
-	    //    std::cout<<list[k]<<std::endl;
+	  
 	    if(list[k]==num[i] && !repeat){
-	      //    std::cout<<"p"<<std::endl;
+	   
 	      cforb++;
 	    
 	      repeat=true;
@@ -227,49 +220,46 @@ class cell {
 	  }
 	      
 	}
-	  //check if octuple forbiden in row
+	//check if octuple forbiden in row
 	if(j != column){
-	    cell c (b.nums[row*9+j],j,row);
-	    std::vector<char> list=c.forbid(b);
-	    bool repeat=false;
-	    for(int k=0;k<list.size();k++){
-	      if(list[k]==num[i] && !repeat){
-		rforb++;
+	  cell c (b.nums[row*9+j],j,row);
+	  std::vector<char> list=c.forbid(b);
+	  bool repeat=false;
+	  for(int k=0;k<list.size();k++){
+	    if(list[k]==num[i] && !repeat){
+	      rforb++;
 			
-		repeat=true;
-	      }
+	      repeat=true;
+	    }
 	  }
 	}
      
-     }
-  //check if octuple forbiden in box
+      }
+      //check if octuple forbiden in box
       for(int k=0;k<3;k++){
         for(int l=0;l<3;l++){
-	  //	std::cout<<"                         "<<std::endl;
+
 	  //choose box
 	  if(column>=k*3 && column<=k*3+2 && row>=l*3 && row<=l*3+2){
-  bool repeat=false;
+	    bool repeat=false;
 	    for(int m=0;m<3;m++){
 	      for(int n=0;n<3;n++){
 	      	 
 		cell c (b.nums[k*3+9*m+27*l+n],m+k*3,3*l+n);
 		std::vector<char> list=c.forbid(b);
 		if( (k*3+9*m+27*l+n)!= row*9+column){
-		  //	  std::cout<<"p"<<std::endl;
 	
-		  //std::cout<<k*3+9*m+27*l+n<<std::endl;
-		for(int k=0;k<list.size();k++){
 	
-		  //  std::cout<<"k"<<list[k]<<" i "<<num[i]<<std::endl;
-		  if(list[k]==num[i] && !repeat){
-		    bforb++;
-		    repeat=true;
-		    //std::cout<<num[i]<<std::endl;
-		  
-
-		      
+	
+		  for(int k=0;k<list.size();k++){
+	
+		    //  std::cout<<"k"<<list[k]<<" i "<<num[i]<<std::endl;
+		    if(list[k]==num[i] && !repeat){
+		      bforb++;
+		      repeat=true;
+		      //std::cout<<num[i]<<std::endl;     
+		    }
 		  }
-		}
 		}
 	      }
 	    }
@@ -278,16 +268,16 @@ class cell {
       }
       
       //  std::cout<<num[i]<<" b  "<<bforb<<"  c  "<<cforb<<"  r  "<<rforb<<" three  "<<three<<std::endl;
-     if((bforb==8 || cforb==8 || rforb==8)&&three){
-       ex=num[i];
-       changed=true;
-     }
+      if((bforb==8 || cforb==8 || rforb==8)&&three){
+	ex=num[i];
+	changed=true;
+      }
    
     }
 
-      if(changed){
-     _cell.val= ex;
-     }
+    if(changed){
+      _cell.val= ex;
+    }
     return _cell;
     
   }

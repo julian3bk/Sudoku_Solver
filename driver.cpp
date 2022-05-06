@@ -49,4 +49,3 @@ int main(int argc, char *argv[]){
      }
 
 }
-//mark original cells as true make others false and different color
