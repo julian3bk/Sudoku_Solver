@@ -8,14 +8,13 @@
 #include "board.H"
 
 class cell {
-  
-private:
+  public:
   char val;
   
   int x,y;
   bool given;
   
-public:
+
 
   cell()
     : val{0}, x{0}, y{0},given{true}
@@ -28,6 +27,7 @@ public:
   cell(char _val, int _x, int _y)
     : val{_val}, x{_x}, y{_y}, given{true}
   {}
+
 
   inline void set_val(char _val) {val = _val;}
   
@@ -182,7 +182,8 @@ public:
     
     cell _cell(val,x,y,given);
     std::vector<char> num {'1','2','3','4','5','6','7','8','9'};
-   
+      char ex;
+      bool changed=false;
 
 
     //loop over numbers
@@ -191,7 +192,7 @@ public:
       int rforb=0;
       int cforb=0;
       int bforb=0;
-
+   
       //check if triple required
       int inst=0;
       std::vector<char> _required=_cell.required(b);
@@ -247,9 +248,10 @@ public:
 	  //	std::cout<<"                         "<<std::endl;
 	  //choose box
 	  if(column>=k*3 && column<=k*3+2 && row>=l*3 && row<=l*3+2){
+  bool repeat=false;
 	    for(int m=0;m<3;m++){
 	      for(int n=0;n<3;n++){
-	      	   bool repeat=false;
+	      	 
 		cell c (b.nums[k*3+9*m+27*l+n],m+k*3,3*l+n);
 		std::vector<char> list=c.forbid(b);
 		if( (k*3+9*m+27*l+n)!= row*9+column){
@@ -262,8 +264,8 @@ public:
 		  if(list[k]==num[i] && !repeat){
 		    bforb++;
 		    repeat=true;
-		    //  std::cout<<"ppp"<<std::endl;
-		    //    std::cout<<"n"<<num[i]<<std::endl;
+		    //std::cout<<num[i]<<std::endl;
+		  
 
 		      
 		  }
@@ -275,15 +277,17 @@ public:
 	}
       }
       
-      std::cout<<num[i]<<" b  "<<bforb<<"  c  "<<cforb<<"  r  "<<rforb<<" three  "<<three<<std::endl;
+      //  std::cout<<num[i]<<" b  "<<bforb<<"  c  "<<cforb<<"  r  "<<rforb<<" three  "<<three<<std::endl;
      if((bforb==8 || cforb==8 || rforb==8)&&three){
-       _cell.val=num[i];
-
+       ex=num[i];
+       changed=true;
      }
    
-
-     
     }
+
+      if(changed){
+     _cell.val= ex;
+     }
     return _cell;
     
   }

@@ -7,44 +7,25 @@
 #include <iostream>
 #include <sstream>
 #include<iomanip>
-
 #include "cell.H"
-/*class cell{
-private:
-  char val;
-  
-  int x,y;
-  bool given;
-  
-public:
-
-  cell()
-    : val{0}, x{0}, y{0},given{true}
-  {}
-    
-  cell(char _val, int _x, int _y, bool _g)
-    : val{_val}, x{_x}, y{_y}, given{_g}
-  {}
-
-  cell(char _val, int _x, int _y)
-    : val{_val}, x{_x}, y{_y}, given{true}
-  {}
-  };*/
 #include <cassert>
+#include <stdlib.h>
 
 // a contiguous 2-d array
 // here the data is stored in row-major order in a 1-d memory space
 // managed as a vector.  We overload () to allow us to index this as
 // a(irow, icol)
 
-struct Board {
-  
-    std::vector<char> nums;
+class Board {
+public:
+  std::vector<char> nums;
+  std::vector<bool> give;
+  bool solved;
 
   Board ()
         :
 
-      nums(81,'_')
+    nums(81,'_'),give(81,true),solved(false)
     {
         // we do the asserts here after the initialization of _data
         // in the initialization list, but if the size is zero, we'll
@@ -85,21 +66,7 @@ struct Board {
   }
 
 
-  Board bsolve(){	std::cout<<"frgrh"<<std::endl;
-    Board _bsolve;
-    _bsolve.nums=nums;
-    for(int x=0;x<9;x++){
-      for(int y=0;y<9;y++){
 
-	if(nums[9*y+x]=='_'){
-	  cell _cell('4',x,y,false);
-	  _bsolve.nums[9*y+x]=_cell.solve(_bsolve);
-	
-	}
-      }
-    }
-    return _bsolve;
-  }
  friend std::ostream& operator<< (std::ostream& os, Board& b);
 };
 
@@ -134,6 +101,9 @@ std::ostream& operator<< (std::ostream& os, Board& b)
 	    else{
 	      std::cout<<"|";
 	    }
+	 /*	 if(!b.give[i]){
+	   std::system("color 70");
+	   }*/
   os << b.nums[i];
 	
 	l++;
