@@ -61,7 +61,6 @@ A single underscore should be used to represent an unknown value. For example, t
 `_,_,_,4,1,9,_,_,5`<br/>
 `_,_,_,_,8,_,_,7,9`<br/>
 
-Note, if reading in a text editor, spaces have been added after underscores to preven github from interpreting them as markdowns
 
 
 ## class overview
