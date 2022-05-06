@@ -42,12 +42,12 @@ new cells in a complete iteration
 
 
 # Example Boards
-The board.dat file contains the following puzzle<br/>
+The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
 The soloution is<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
 
-medium.dat comes from websudoku.com
+medium.dat comes from https://www.websudoku.com/
 
 
 
