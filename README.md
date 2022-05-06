@@ -69,7 +69,6 @@ Note, if reading in a text editor, spaces have been added after underscores to p
 * The  *cell* class describes the location and value of a cell on the game board.
 It provides methods for finding out what values are needed in the rows columns
 and 3X3 boxes that a cell is in, and which values are forbiden from the cell.
-
 The cell class also contains a method for solving individual cells. If a value is
 required in all 3 of the cell's row, column and box and it is forbiden from all 
 other cells in any of the row, column or box, then this value is output 
