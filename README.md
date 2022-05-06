@@ -11,7 +11,7 @@ column or row, and it is forbiden from all but one of the 9 cells in that group,
 then that value must go in that cell.
 
 
-# Building
+## Building
 make
 
 
@@ -23,7 +23,7 @@ or it is found that the algorithm can not solve the board.
 
 
 
-# Limitations
+## Limitations
 Some Sudoku puzzles do not provide enough information for this algorithm to work.
 These can be solved by guessing but this program does not do this.
 french.dat is an example of a board that can not be solved. french1.dat and french2.dat
@@ -37,11 +37,8 @@ new cells in a complete iteration
 This image from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sudoku.jpg/170px-Sudoku.jpg "French")
 
-If a board is not solveable by this program, it will quit if it does not solve any
-new cells in a complete iteration
 
-
-# Example Boards
+## Example Boards
 The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
 The soloution is<br/>
@@ -51,7 +48,7 @@ medium.dat comes from https://www.websudoku.com/
 
 
 
-# Writing Boards
+## Writing Boards
 A properly formated board is a 9 by 9 grid of comma seperated characters with no spaces or lines outside of the grid. 
 A single underscore should be used to represent an unknown value. For example, the text of board.dat is:
 
@@ -68,7 +65,7 @@ _ ,_ ,_ ,_ ,8 ,_ ,_ ,7,9<br/>
 Note, if reading in a text editor, spaces have been added after underscores to preven github from interpreting them as markdowns
 
 
-# class overview
+## class overview
 The cell class describes the location and value of a cell on the game board.
 It provides methods for finding out what values are needed in the rows columns
 and 3X3 boxes that a cell is in, and which values are forbiden from the cell.
