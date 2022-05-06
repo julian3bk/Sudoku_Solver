@@ -35,7 +35,7 @@ If a board is not solveable by this program, it will quit if it does not solve a
 new cells in a complete iteration
 
 This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sudoku.jpg/170px-Sudoku.jpg "French")
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")
 
 
 ## Example Boards
