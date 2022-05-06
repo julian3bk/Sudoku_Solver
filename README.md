@@ -31,8 +31,11 @@ are the same as french.dat but with one cell in each of them guessed. In this ca
 both guesses lead to the same soloution. However the guess in french3.dat leads to
 a different soloution.
 
-This image from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat
-![Alt text](https://en.wikipedia.org/wiki/File:Sudoku.jpg "French")
+If a board is not solveable by this program, it will quit if it does not solve any
+new cells in a complete iteration
+
+This image from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sudoku.jpg/170px-Sudoku.jpg "French")
 
 If a board is not solveable by this program, it will quit if it does not solve any
 new cells in a complete iteration
@@ -42,7 +45,7 @@ new cells in a complete iteration
 The board.dat file contains the following puzzle<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
 The soloution is<br/>
-![Alt text](https://en.wikipedia.org/wiki/File:Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg "Solved")
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
 
 medium.dat comes from websudoku.com
 
