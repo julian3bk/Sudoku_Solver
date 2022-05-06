@@ -65,6 +65,8 @@ _ ,6,_ ,_ ,_ ,_ ,2,8,_ <br/>
 _ ,_ ,_ ,4,1,9 ,_ ,_ ,5<br/>
 _ ,_ ,_ ,_ ,8 ,_ ,_ ,7,9<br/>
 
+Note, if reading in a text editor, spaces have been added after underscores to preven github from interpreting them as markdowns
+
 
 # class overview
 The cell class describes the location and value of a cell on the game board.
