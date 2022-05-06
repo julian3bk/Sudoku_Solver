@@ -35,8 +35,8 @@ medium.dat comes from https://www.websudoku.com/
 ## Limitations
 Some Sudoku puzzles do not provide enough information for this algorithm to work.
 These can be solved by guessing but this program does not do this.
-french.dat is an example of a board that can not be solved. french1.dat and french2.dat
-are the same as french.dat but with one cell in each of them guessed. In this case
+french.dat is an example of a board that can not be solved by this program on its own. french1.dat and french2.dat
+are the same as french.dat but with one uknown cell value in each of them guessed. In this case
 both guesses lead to the same soloution. However the guess in french3.dat leads to
 a different soloution.
 
@@ -51,15 +51,15 @@ This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.
 A properly formated board is a 9 by 9 grid of comma seperated characters with no spaces or lines outside of the grid. 
 A single underscore should be used to represent an unknown value. For example, the text of board.dat is:
 
-5,3,_ ,_ ,7,_ ,_ ,_ ,_ <br/>
-6,_ ,_ ,1,9,5,_ ,_ ,_ <br/>
-_ ,9,8,_ ,_ ,_ ,_ ,6,_ <br/>
-8,_ ,_ ,_ ,6,_ ,_ ,_ ,3<br/>
-4,_ ,_ ,8,_ ,3,_ ,_ ,1<br/>
-7,_ ,_ ,_ ,2,_ ,_ ,_ ,6<br/>
-_ ,6,_ ,_ ,_ ,_ ,2,8,_ <br/>
-_ ,_ ,_ ,4,1,9 ,_ ,_ ,5<br/>
-_ ,_ ,_ ,_ ,8 ,_ ,_ ,7,9<br/>
+`5,3,_,_,7,_,_,_,_
+6,_,_,1,9,5,_,_,_
+_,9,8,_,_,_,_,6,_
+8,_,_,_,6,_,_,_,3
+4,_,_,8,_,3,_,_,1
+7,_,_,_,2,_,_,_,6
+_,6,_,_,_,_,2,8,_
+_,_,_,4,1,9,_,_,5
+_,_,_,_,8,_,_,7,9`
 
 Note, if reading in a text editor, spaces have been added after underscores to preven github from interpreting them as markdowns
 
@@ -73,8 +73,8 @@ required in all 3 of the cell's row, column and box and it is forbiden from all
 other cells in any of the row, column or box, then this value is output 
 
 
-* The *Board* class contains the values of the 81 cells on the game board.
-Boards can be read in from properly formated text files.
+* The *Board* class contains the values of the 81 cells on the game board stored as a vector.
+Boards can be read in from properly formated text files. The value of the elements of the board at position `_pos` can be edited using inline `void set(int _pos,char _val) {nums[_pos]=_val;}`. This is useful if you want to add some guesses to a board to try to make it possible for the program to solve.
 
 
 * The *solver* class has methods for solving the full board. It uses the solver from
