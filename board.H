@@ -9,7 +9,27 @@
 #include<iomanip>
 
 #include "cell.H"
+/*class cell{
+private:
+  char val;
+  
+  int x,y;
+  bool given;
+  
+public:
 
+  cell()
+    : val{0}, x{0}, y{0},given{true}
+  {}
+    
+  cell(char _val, int _x, int _y, bool _g)
+    : val{_val}, x{_x}, y{_y}, given{_g}
+  {}
+
+  cell(char _val, int _x, int _y)
+    : val{_val}, x{_x}, y{_y}, given{true}
+  {}
+  };*/
 #include <cassert>
 
 // a contiguous 2-d array
@@ -65,12 +85,16 @@ struct Board {
   }
 
 
-  Board bsolve(){
+  Board bsolve(){	std::cout<<"frgrh"<<std::endl;
     Board _bsolve;
+    _bsolve.nums=nums;
     for(int x=0;x<9;x++){
       for(int y=0;y<9;y++){
-	if(nums[9*y+x]=='_'){
 
+	if(nums[9*y+x]=='_'){
+	  cell _cell('4',x,y,false);
+	  _bsolve.nums[9*y+x]=_cell.solve(_bsolve);
+	
 	}
       }
     }

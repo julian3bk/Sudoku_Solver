@@ -30,13 +30,14 @@ int main(){
    std::cout<<d<<std::endl;
    
 
-   
+  
 
    for(int i=0;i<e.size();i++){
 
-      std::cout<<e[i]<<std::endl;
+     //  std::cout<<e[i]<<std::endl;
      } 
-    
+     Board solved=a.bsolve();
+     std::cout<<solved<<std::endl;
   
 }
 //mark original cells as true make others false and different color
