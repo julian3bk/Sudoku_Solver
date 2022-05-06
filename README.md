@@ -12,7 +12,7 @@ then that value must go in that cell.
 
 
 ## Building
-If your pwd is Sudoku_Solver, entering 'make' in the terminal will build the solve application and a driver. The driver can be exercised by 'make testing'
+If your pwd is Sudoku_Solver, entering `make` in the terminal will build the solve application and a driver. The driver can be exercised by `make testing`.
 
 
 ## Using the Program
