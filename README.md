@@ -23,6 +23,15 @@ or it is found that the algorithm can not solve the board.
 
 
 
+## Example Boards
+The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
+The soloution is<br/>
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
+
+medium.dat comes from https://www.websudoku.com/
+
+
 ## Limitations
 Some Sudoku puzzles do not provide enough information for this algorithm to work.
 These can be solved by guessing but this program does not do this.
@@ -36,16 +45,6 @@ new cells in a complete iteration
 
 This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")
-
-
-## Example Boards
-The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
-The soloution is<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
-
-medium.dat comes from https://www.websudoku.com/
-
 
 
 ## Writing Boards
