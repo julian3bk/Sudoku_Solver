@@ -66,7 +66,7 @@ Note, if reading in a text editor, spaces have been added after underscores to p
 
 
 ## class overview
-The  *cell* class describes the location and value of a cell on the game board.
+* The  *cell* class describes the location and value of a cell on the game board.
 It provides methods for finding out what values are needed in the rows columns
 and 3X3 boxes that a cell is in, and which values are forbiden from the cell.
 
@@ -75,11 +75,11 @@ required in all 3 of the cell's row, column and box and it is forbiden from all
 other cells in any of the row, column or box, then this value is output 
 
 
-The *Board* class contains the values of the 81 cells on the game board.
+* The *Board* class contains the values of the 81 cells on the game board.
 Boards can be read in from properly formated text files.
 
 
-The *solver* class has methods for solving the full board. It uses the solver from
+* The *solver* class has methods for solving the full board. It uses the solver from
 the cell class and loops over all 81 cells. There is one solver that will keep
 iterating until either the board is solved or it is determined that the algorithm
 can not solve it. There is a diferent solver that only preforms one iteration of
