@@ -51,15 +51,15 @@ This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.
 A properly formated board is a 9 by 9 grid of comma seperated characters with no spaces or lines outside of the grid. 
 A single underscore should be used to represent an unknown value. For example, the text of board.dat is:
 
-`5,3,_,_,7,_,_,_,_
-6,_,_,1,9,5,_,_,_
-_,9,8,_,_,_,_,6,_
-8,_,_,_,6,_,_,_,3
-4,_,_,8,_,3,_,_,1
-7,_,_,_,2,_,_,_,6
-_,6,_,_,_,_,2,8,_
-_,_,_,4,1,9,_,_,5
-_,_,_,_,8,_,_,7,9`
+`5,3,_,_,7,_,_,_,_`<br/>
+`6,_,_,1,9,5,_,_,_`<br/>
+`_,9,8,_,_,_,_,6,_`<br/>
+`8,_,_,_,6,_,_,_,3`<br/>
+`4,_,_,8,_,3,_,_,1`<br/>
+`7,_,_,_,2,_,_,_,6`<br/>
+`_,6,_,_,_,_,2,8,_`<br/>
+`_,_,_,4,1,9,_,_,5`<br/>
+`_,_,_,_,8,_,_,7,9`<br/>
 
 Note, if reading in a text editor, spaces have been added after underscores to preven github from interpreting them as markdowns
 
