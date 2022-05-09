@@ -7,12 +7,13 @@ puzzle are that in each box, column and row there must exist all numbers
 1 to 9, but only once each. 
 
 The principle of this solver is that if a number is required in a given box,
-column or row, and it is forbiden from all but one of the 9 cells in that group,
+column or row, and it is forbiden from the 8 other cells in that group,
 then that value must go in that cell.
 
 
 ## Building
-If your pwd is Sudoku_Solver, entering `make` in the terminal will build the solve application and a driver. The driver can be exercised by `make testing`.
+If your pwd is Sudoku_Solver, entering `make` in the terminal will build the solve and guess applications and a driver. 
+To build in debug mode enter `make DEBUG=TRUE`. In debug mode the driver is exercised automaticaly. It can also be exercised by `make testing DEBUG=TRUE`.
 
 
 ## Using the Program
@@ -20,6 +21,9 @@ After compiling, the program can be run by `./solve`. The program can be provide
 with the name of a board file on the command line. If no file is given, the user
 is prompted to give one. After this the solver will run until the board is solved 
 or it is found that the algorithm can not solve the board. 
+
+Some problems that can not be solved by `./solve` can be solved by `./guess`. Providing files to the program works the same as above.
+The number of guesses to make can be chosen from 1 to 4 by entering that number after the file name on the command line.
 
 
 
@@ -29,23 +33,25 @@ The board.dat file contains the following puzzle. It comes from https://en.wikip
 The program can be verified by running `./solve boards/board.dat` which should produce the following soloution<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
 
-medium.dat comes from https://www.websudoku.com/
+The medium.dat, hard.dat and veryhard.dat boards come from https://www.websudoku.com/
 
 
 ## Limitations
 Some Sudoku puzzles do not provide enough information for this algorithm to work.
-These can be solved by guessing but this program does not do this.
+These can be solved by guessing but `./solve` does not do this.
 french.dat is an example of a board that can not be solved by this program on its own. french1.dat and french2.dat
 are the same as french.dat but with one uknown cell value in each of them guessed. In this case
 both guesses lead to the same soloution. However the guess in french3.dat leads to
 a different soloution.
 
-If a board is not solveable by this program, it will quit if it does not solve any
-new cells in a complete iteration
+If a board is not solveable by `./solve`, it will quit if it does not solve any
+new cells in one complete iteration
 
 This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")<br/>
 
+Some boards not solveable by `./solve` are solveable by `./guess`, for example hard.dat and french.dat. However not all boards can
+be solved by`./guess`. veryhard.dat is one example.
 
 ## Writing Boards
 A properly formated board is a 9 by 9 grid of comma seperated characters with no spaces or lines outside of the grid. 
@@ -82,4 +88,7 @@ iterating until either the board is solved or it is determined that the algorith
 can not solve it. There is a diferent solver that only preforms one iteration of
 solving.
 
+* The *guess* class guesses from the values needed by a cell's row, column and box, without requiring that it be needed by 
+all 3 as in the *cell* class. Applying guess to itself allows making multiple guesses. After guessing a soloution is attempted.
+If no solution is found the program restarts and a new guess is made
 
