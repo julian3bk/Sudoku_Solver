@@ -26,7 +26,7 @@ or it is found that the algorithm can not solve the board.
 ## Example Boards
 The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
-The soloution is<br/>
+The program can be verified by running `./solve boards/board.dat` which should produce the following soloution<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
 
 medium.dat comes from https://www.websudoku.com/
