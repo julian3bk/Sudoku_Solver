@@ -17,12 +17,12 @@ To build in debug mode enter `make DEBUG=TRUE`. In debug mode the driver is exer
 
 
 ## Using the Program
-After compiling, the program can be run by `./solve`. The program can be provided 
+After compiling, the program can be run by `./solve.o`. The program can be provided 
 with the name of a board file on the command line. If no file is given, the user
 is prompted to give one. After this the solver will run until the board is solved 
 or it is found that the algorithm can not solve the board. 
 
-Some problems that can not be solved by `./solve` can be solved by `./guess`. Providing files to the program works the same as above.
+Some problems that can not be solved by `./solve.o` can be solved by `./guess.o`. Providing files to the program works the same as above.
 The number of guesses to make can be chosen from 1 to 4 by entering that number after the file name on the command line.
 
 
@@ -38,19 +38,19 @@ The medium.dat, hard.dat and veryhard.dat boards come from https://www.websudoku
 
 ## Limitations
 Some Sudoku puzzles do not provide enough information for this algorithm to work.
-These can be solved by guessing but `./solve` does not do this.
+These can be solved by guessing but `./solve.o` does not do this.
 french.dat is an example of a board that can not be solved by this program on its own. french1.dat and french2.dat
 are the same as french.dat but with one uknown cell value in each of them guessed. In this case
 both guesses lead to the same soloution. However the guess in french3.dat leads to
 a different soloution.
 
-If a board is not solveable by `./solve`, it will quit if it does not solve any
+If a board is not solveable by `./solve.o`, it will quit if it does not solve any
 new cells in one complete iteration
 
 This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")<br/>
 
-Some boards not solveable by `./solve` are solveable by `./guess`, for example hard.dat and french.dat. However not all boards can
+Some boards not solveable by `./solve.o` are solveable by `./guess.o`, for example hard.dat and french.dat. However not all boards can
 be solved by`./guess`. veryhard.dat is one example.
 
 ## Writing Boards
