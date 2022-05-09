@@ -51,8 +51,8 @@ new cells in one complete iteration
 This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")<br/>
 
-Some boards not solveable by `./solve.o` are solveable by `./guess.o`, for example hard.dat and french.dat. However not all boards can
-be solved by`./guess`. veryhard.dat is one example.
+`./guess.o` can make some guesses and is able to solve some boards which are not solveable by `./solve.o`, for example hard.dat and french.dat. 
+However not all boards canbe solved by`./guess.o`, veryhard.dat is one example.
 
 ## Writing Boards
 A properly formated board is a 9 by 9 grid of comma seperated characters with no spaces or lines outside of the grid. 
@@ -70,7 +70,7 @@ A single underscore should be used to represent an unknown value. For example, t
 
 
 
-## class overview
+## class overviews
 * The  *cell* class describes the location and value of a cell on the game board.
 It provides methods for finding out what values are needed in the rows columns
 and 3X3 boxes that a cell is in, and which values are forbiden from the cell.
@@ -80,7 +80,7 @@ other cells in any of the row, column or box, then this value is output
 
 
 * The *Board* class contains the values of the 81 cells on the game board stored as a vector.
-Boards can be read in from properly formated text files. The value of the elements of the board at position `_pos` can be edited using inline `void set(int _pos,char _val) {nums[_pos]=_val;}`. This is useful if you want to add some guesses to a board to try to make it possible for the program to solve.
+Boards can be read in from properly formated text files. The value of the elements of the board at position `_pos` can be edited using `set(int _pos,char _val) {nums[_pos]=_val;}`. This is useful if you want to add some guesses to a board to try to make it possible for the program to solve.
 
 
 * The *solver* class has methods for solving the full board. It uses the solver from
