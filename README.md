@@ -38,7 +38,7 @@ The medium.dat, hard.dat and veryhard.dat boards come from https://www.websudoku
 
 
 ## Limitations
-Some Sudoku puzzles do not provide enough information for this algorithm to work.
+Some Sudoku puzzles do not provide enough information for these programs to work.
 These can be solved by guessing but `./solve.o` does not do this.
 french.dat is an example of a board that can not be solved by this program on its own. french1.dat and french2.dat
 are the same as french.dat but with one uknown cell value in each of them guessed. In this case
