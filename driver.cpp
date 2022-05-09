@@ -20,12 +20,8 @@ int main(){
    std::cout<<"testing reading from file"<<std::endl;
    assert(board.nums[0]=='5');
   
- 
-  
- 
 
-
-  int x=6;
+   int x=6;
    int y=5;
    cell c (board.nums[x+9*y],x,y,true);
    std::vector<char> req {'1','1','2','3','3','4','4','4','5','5','5','6','7','7','8','8','8','9','9','9'};

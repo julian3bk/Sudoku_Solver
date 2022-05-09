@@ -24,8 +24,6 @@ int main(int argc, char *argv[]){
     std::cin>>file;
   }
 
-  int iter=0;
- 
    board=board.read(file);
  
    std::cout<<board<<std::endl;

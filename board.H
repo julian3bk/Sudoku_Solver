@@ -10,6 +10,7 @@
 #include "cell.H"
 #include <cassert>
 #include <stdlib.h>
+#include <omp.h>
 
 // a contiguous 2-d array
 // here the data is stored in row-major order in a 1-d memory space
@@ -45,8 +46,10 @@ public:
   
     std::string line{};
     	int it=0;
+
+	{
     while (std::getline(file, line)){
-    
+  
       for(int i=0;i<17;i++){
 
        	if(line[i] != ','){
@@ -58,6 +61,7 @@ public:
 	
       }
     }
+	}
   
  
     
