@@ -1,5 +1,5 @@
 # Sudoku_Solver
-PHY 504 Final Project a code that solves Sudoku puzzles
+## PHY 504 Final Project: A code that solves Sudoku puzzles
 
 A sudoku board is composed of a 9 by 9 grid of cells that can take values
 from 1 to 9. The board is subdivided into 9 3x3 boxes. The rules of the 
@@ -12,57 +12,55 @@ then that value must go in that cell.
 
 
 ## Building
-make
+If your pwd is Sudoku_Solver, entering `make` in the terminal will build the solve application and a driver. The driver can be exercised by `make testing`.
 
 
 ## Using the Program
-After compiling, the program can be run by ./solve. The program can be provided 
+After compiling, the program can be run by `./solve`. The program can be provided 
 with the name of a board file on the command line. If no file is given, the user
 is prompted to give one. After this the solver will run until the board is solved 
 or it is found that the algorithm can not solve the board. 
 
 
 
+## Example Boards
+The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") <br/>
+The program can be verified by running `./solve boards/board.dat` which should produce the following soloution<br/>
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
+
+medium.dat comes from https://www.websudoku.com/
+
+
 ## Limitations
 Some Sudoku puzzles do not provide enough information for this algorithm to work.
 These can be solved by guessing but this program does not do this.
-french.dat is an example of a board that can not be solved. french1.dat and french2.dat
-are the same as french.dat but with one cell in each of them guessed. In this case
+french.dat is an example of a board that can not be solved by this program on its own. french1.dat and french2.dat
+are the same as french.dat but with one uknown cell value in each of them guessed. In this case
 both guesses lead to the same soloution. However the guess in french3.dat leads to
 a different soloution.
 
 If a board is not solveable by this program, it will quit if it does not solve any
 new cells in a complete iteration
 
-This image from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sudoku.jpg/170px-Sudoku.jpg "French")
-
-
-## Example Boards
-The board.dat file contains the following puzzle. It comes from https://en.wikipedia.org/wiki/Sudoku<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png "Example") 
-The soloution is<br/>
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg/250px-Sudoku_Puzzle_by_L2G-20050714_solution_standardized_layout.svg.png "Solved")
-
-medium.dat comes from https://www.websudoku.com/
-
+This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")
 
 
 ## Writing Boards
 A properly formated board is a 9 by 9 grid of comma seperated characters with no spaces or lines outside of the grid. 
 A single underscore should be used to represent an unknown value. For example, the text of board.dat is:
 
-5,3,_ ,_ ,7,_ ,_ ,_ ,_ <br/>
-6,_ ,_ ,1,9,5,_ ,_ ,_ <br/>
-_ ,9,8,_ ,_ ,_ ,_ ,6,_ <br/>
-8,_ ,_ ,_ ,6,_ ,_ ,_ ,3<br/>
-4,_ ,_ ,8,_ ,3,_ ,_ ,1<br/>
-7,_ ,_ ,_ ,2,_ ,_ ,_ ,6<br/>
-_ ,6,_ ,_ ,_ ,_ ,2,8,_ <br/>
-_ ,_ ,_ ,4,1,9 ,_ ,_ ,5<br/>
-_ ,_ ,_ ,_ ,8 ,_ ,_ ,7,9<br/>
+`5,3,_,_,7,_,_,_,_`<br/>
+`6,_,_,1,9,5,_,_,_`<br/>
+`_,9,8,_,_,_,_,6,_`<br/>
+`8,_,_,_,6,_,_,_,3`<br/>
+`4,_,_,8,_,3,_,_,1`<br/>
+`7,_,_,_,2,_,_,_,6`<br/>
+`_,6,_,_,_,_,2,8,_`<br/>
+`_,_,_,4,1,9,_,_,5`<br/>
+`_,_,_,_,8,_,_,7,9`<br/>
 
-Note, if reading in a text editor, spaces have been added after underscores to preven github from interpreting them as markdowns
 
 
 ## class overview
@@ -74,8 +72,8 @@ required in all 3 of the cell's row, column and box and it is forbiden from all
 other cells in any of the row, column or box, then this value is output 
 
 
-* The *Board* class contains the values of the 81 cells on the game board.
-Boards can be read in from properly formated text files.
+* The *Board* class contains the values of the 81 cells on the game board stored as a vector.
+Boards can be read in from properly formated text files. The value of the elements of the board at position `_pos` can be edited using inline `void set(int _pos,char _val) {nums[_pos]=_val;}`. This is useful if you want to add some guesses to a board to try to make it possible for the program to solve.
 
 
 * The *solver* class has methods for solving the full board. It uses the solver from
