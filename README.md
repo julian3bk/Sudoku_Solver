@@ -48,7 +48,7 @@ a different soloution.
 If a board is not solveable by `./solve.o`, it will quit if it does not solve any
 new cells in one complete iteration
 
-This image of a 1985 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
+This image of a 1885 predecesor to Sudoku which comes from https://en.wikipedia.org/wiki/Sudoku is the source of french.dat<br/>
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/6/6f/Sudoku.jpg "French")<br/>
 
 `./guess.o` can make some guesses and is able to solve some boards which are not solveable by `./solve.o`, for example hard.dat and french.dat. 
